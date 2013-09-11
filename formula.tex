@@ -1,0 +1,90 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+
+\CTEXsetup[format={\Large\bfseries\raggedright}]{section}
+
+\begin{document}
+\section{梯度、散度、旋度}
+\begin{itemize}
+\item   $ \nabla(fg) = f \nabla g + g \nabla f $
+\item	$ \nabla \cdot (f\mathbf{A}) = f \nabla \cdot \mathbf{A} + \nabla f \cdot \mathbf{A} $
+\item	$ \nabla \times (f \mathbf{A}) = f \nabla \times \mathbf{A} + \nabla f \times \mathbf{A} $
+\item	$ \nabla \times (\nabla f) = 0 $ 
+\item	$ \nabla \cdot (\nabla \times \mathbf{A}) = 0 $
+\item	$ \nabla \cdot (\mathbf{A}\times\mathbf{B})=(\nabla\times\mathbf{A})\cdot\mathbf{B}-(\nabla \times \mathbf{B})\cdot\mathbf{A} $
+\item	$ \nabla\times(\mathbf{A}\times\mathbf{B})=(\mathbf{B}\cdot\nabla)\mathbf{A}-\mathbf{B}(\nabla\cdot\mathbf{A})+\mathbf{A}(\nabla\cdot\mathbf{B})-(\mathbf{A}\cdot\nabla)\mathbf{B} $
+\item	$ \nabla\times(\nabla\times\mathbf{A})=\nabla(\nabla\cdot\mathbf{A})-\nabla^2\mathbf{A}$
+\item	$ \nabla(\mathbf{A}\cdot\mathbf{B})=\mathbf{A}\times(\nabla\times\mathbf{B})+\mathbf{B}\times(\nabla\times\mathbf{A})+(\mathbf{A}\cdot\nabla)\mathbf{B}+(\mathbf{B}\cdot\nabla)\mathbf{A} $
+\item	$ (\mathbf{A}\cdot\nabla)\mathbf{r}=\mathbf{A} $
+\item	$ \nabla\cdot\mathbf{r}=3 $
+\item	$ \nabla\times\mathbf{r}=0 $
+\item	$ \nabla\cdot(\frac{\mathbf{r}}{r^3})=0$
+\end{itemize}
+
+\section{曲线正交坐标系}
+\subsection{直角坐标系}
+\begin{itemize}
+\item	$ \nabla f =( \frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}) $
+\item	$ \nabla\cdot\mathbf{A}=\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z} $
+\item	$ \nabla\times\mathbf{A} = 
+		\begin{vmatrix} 
+			\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\ 
+			\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac {\partial}{\partial z} \\ 
+			A_x & A_y & A_z
+		\end{vmatrix} 
+	$
+\end{itemize}
+
+\subsection{柱坐标系}
+\begin{itemize}
+\item	$ \nabla f(\rho,\theta,z) = \frac{\partial f}{\partial\rho} \mathbf{e}_{\rho}
+                            + \frac1{\rho}\frac{\partial f}{\partial\theta} \mathbf{e}_{\theta}
+                            + \frac{\partial f}{\partial z} \mathbf{e}_{z}	$
+\item	$ \nabla\cdot\mathbf A = \frac{1}{r} \frac{\partial}{\partial r} (rA_r) 
+			+ \frac{1}{r} \frac{\partial A_\varphi}{\partial\varphi} 
+			+ \frac{\partial A_z}{\partial z} $
+\item	$ \nabla\times\mathbf{A} = 
+		\begin{vmatrix} 
+			\mathbf{e}_{r} & \mathbf{e}_{\theta} & \mathbf{e}_z \\ 
+			\frac{\partial}{\partial r} & \frac{1}{r}\frac{\partial}{\partial \theta} & \frac {\partial}{\partial z} \\ 
+			A_r & A_{\theta} & A_z 
+		\end{vmatrix} $
+\end{itemize}
+
+\subsection{球坐标系}
+\begin{itemize}
+\item	$ \nabla f(r,\theta,\phi) = \frac{\partial f}{\partial r} \mathbf{e}_{r}
+                            + \frac1{r}\frac{\partial f}{\partial\theta} \mathbf{e}_{\theta}
+                            + \frac1{r\sin \theta}\frac{\partial f}{\partial \phi} \mathbf{e}_{\phi} $	
+\item	$ \nabla\cdot\mathbf A = \frac{1}{r^2} \frac{\partial}{\partial r}(r^2 A_r) 
+			+ \frac{1}{r\sin\theta} \frac{\partial}{\partial \theta} (\sin\theta\, A_\theta)
+			+ \frac{1}{r\sin\theta} \frac{\partial A_\varphi}{\partial \varphi}.
+	$
+\item	$ \nabla\times\mathbf{A} = 
+		\begin{vmatrix} 
+			\mathbf{e}_{r} & \mathbf{e}_{\theta} & \mathbf{e}_{\varphi} \\ 
+			\frac{\partial}{\partial r} & \frac{1}{r}\frac{\partial}{\partial \theta} & \frac {1}{r\sin\theta}\frac {\partial}{\partial \varphi} \\ 
+			A_r & A_{\theta} & A_{\varphi} 
+		\end{vmatrix}
+	$
+\end{itemize}
+
+\subsection{一般曲线正交坐标系}
+\begin{itemize}
+\item	$ \nabla f = \frac{1}{h_1}\frac{\partial f}{\partial u_1}\mathbf{u_1} 
+		+ \frac{1}{h_2}\frac{\partial f}{\partial u_2}\mathbf{u_2} 
+		+ \frac{1}{h_3}\frac{\partial f}{\partial u_2}\mathbf{u_3} $
+\item	$ \nabla\cdot\mathbf{A} 
+		= \frac{1}{h_1 h_2 h_3}[\frac{\partial}{\partial u_1}(h_2 h_3 A_1) 
+		+ \frac{\partial}{\partial u_2}(h_3 h_1 A_2) 
+		+ \frac{\partial}{\partial u_3}(h_1 h_2 A_3) ]
+	$
+\item	$ \nabla\times\mathbf{A} = \frac{1}{h_1 h_2 h_3} 
+		\begin{vmatrix} 
+			h_1 \mathbf{u}_1 & h_2 \mathbf{u}_2 & h_3 \mathbf{u}_3 \\ 
+			\frac{\partial}{\partial u_1} & \frac{\partial}{\partial u_2} & \frac {\partial}{\partial u_3} \\ 
+			A_1 h_1 & A_2 h_2 & A_3 h_3
+		\end{vmatrix} 
+	$
+\end{itemize}
+\end{document}
